@@ -5,11 +5,5 @@ function login() {
   if (u === "admin" && p === "1234") {
     document.getElementById("login").style.display = "none";
     document.getElementById("panel").classList.remove("hidden");
-  } else {
-    document.getElementById("error").innerText = "Wrong username or password";
   }
-}
-
-function logout() {
-  location.reload();
 }
