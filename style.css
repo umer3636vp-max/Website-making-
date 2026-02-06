@@ -1,13 +1,13 @@
-html, body {
-  width: 100%;
+/* This makes the entire viewport a flex container, centering content */
+body, html {
   height: 100%;
   margin: 0;
 }
 
 body {
-  background: linear-gradient(135deg, #4c1d95, #1e1b4b, #020617);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  color: white;
-  font-family: "Segoe UI", sans-serif;
+  display: flex;
+  justify-content: center;  /* horizontal center */
+  align-items: center;      /* vertical center */
+  min-height: 100vh;        /* fill the viewport height */
+  text-align: center;       /* optional: center text inside */
 }
