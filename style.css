@@ -11,3 +11,15 @@ body {
   min-height: 100vh;        /* fill the viewport height */
   text-align: center;       /* optional: center text inside */
 }
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* or any height you want */
+  text-align: center;
+}
+<div class="container">
+  <!-- your content here -->
+  <h1>Welcome to my site</h1>
+  <p>This content is centered</p>
+</div>
