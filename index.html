@@ -1,48 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>My Arix-style Panel</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Arix-Style Panel — Demo</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <aside class="sidebar">
-    <h2>My Panel</h2>
-    <nav>
-      <ul>
-        <li><a href="#">Dashboard</a></li>
-        <li><a href="#">Servers</a></li>
-        <li><a href="#">Settings</a></li>
-      </ul>
-    </nav>
-  </aside>
+  <!-- LOGIN OVERLAY -->
+  <div id="loginOverlay" class="overlay">
+    <div class="login-card">
+      <h2>Sign in</h2>
+      <div id="loginError" class="error" style="display:none;"></div>
 
-  <main class="main-content">
-    <header>
-      <h1>Dashboard</h1>
-      <div class="theme-buttons">
-        <button onclick="setBg('purple')">Purple</button>
-        <button onclick="setBg('dark')">Dark</button>
-      </div>
-    </header>
+      <label>Username</label>
+      <input id="username" type="text" placeholder="admin" />
 
-    <section class="cards">
-      <div class="card">
-        <h3>Minecraft Server</h3>
-        <p>Status: <span class="status online">Online</span></p>
+      <label>Password</label>
+      <input id="password" type="password" placeholder="password123" />
+
+      <div class="row">
+        <label class="checkbox">
+          <input id="remember" type="checkbox" /> Remember me
+        </label>
       </div>
-      <div class="card">
-        <h3>Web Server</h3>
-        <p>Status: <span class="status offline">Offline</span></p>
+
+      <button id="btnLogin">Login</button>
+    </div>
+  </div>
+
+  <!-- MAIN PANEL -->
+  <div id="app" style="display:none;">
+    <div class="sidebar">
+      <h2>Arix</h2>
+      <nav>
+        <a class="active">Servers</a>
+        <a>Account</a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <button id="btnLogout" class="ghost">Logout</button>
       </div>
-      <div class="card">
-        <h3>Database</h3>
-        <p>Status: <span class="status online">Online</span></p>
+    </div>
+
+    <div class="main">
+      <div class="topbar">
+        <span id="welcomeTxt">Welcome back</span>
       </div>
-    </section>
-  </main>
+
+      <div class="cards">
+        <div class="card online">
+          <h3>Minecraft</h3>
+          <p>RAM: 1.1 GB / 8 GB</p>
+          <p>Status: Online</p>
+          <button>Manage server</button>
+        </div>
+
+        <div class="card offline">
+          <h3>Palworld</h3>
+          <p>RAM: 0 GB / 8 GB</p>
+          <p>Status: Offline</p>
+          <button>Manage server</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
