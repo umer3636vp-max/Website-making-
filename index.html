@@ -1,72 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Arix-Style Panel — Demo</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arix Panel</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- LOGIN OVERLAY -->
-  <div id="loginOverlay" class="overlay">
-    <div class="login-card">
-      <h2>Sign in</h2>
-      <div id="loginError" class="error" style="display:none;"></div>
+<!-- LOGIN -->
+<div id="login" class="login-container">
+  <div class="login-box">
+    <h2>Welcome Back</h2>
+    <p class="muted">Sign in to your panel</p>
 
-      <label>Username</label>
-      <input id="username" type="text" placeholder="admin" />
+    <input id="username" placeholder="Username">
+    <input id="password" type="password" placeholder="Password">
 
-      <label>Password</label>
-      <input id="password" type="password" placeholder="password123" />
+    <button onclick="login()">Login</button>
 
-      <div class="row">
-        <label class="checkbox">
-          <input id="remember" type="checkbox" /> Remember me
-        </label>
-      </div>
-
-      <button id="btnLogin">Login</button>
-    </div>
+    <p id="error" class="error"></p>
   </div>
+</div>
 
-  <!-- MAIN PANEL -->
-  <div id="app" style="display:none;">
-    <div class="sidebar">
-      <h2>Arix</h2>
-      <nav>
-        <a class="active">Servers</a>
-        <a>Account</a>
-      </nav>
+<!-- PANEL -->
+<div id="panel" class="panel hidden">
 
-      <div class="sidebar-bottom">
-        <button id="btnLogout" class="ghost">Logout</button>
-      </div>
+  <aside class="sidebar">
+    <h1>Arix</h1>
+    <a class="active">Servers</a>
+    <a>Account</a>
+    <a onclick="logout()">Logout</a>
+  </aside>
+
+  <main class="content">
+    <div class="top">
+      <h2>Welcome back 👋</h2>
     </div>
 
-    <div class="main">
-      <div class="topbar">
-        <span id="welcomeTxt">Welcome back</span>
+    <div class="servers">
+      <div class="server online">
+        <h3>Minecraft</h3>
+        <p>RAM: 1.1GB / 8GB</p>
+        <span>Online</span>
       </div>
 
-      <div class="cards">
-        <div class="card online">
-          <h3>Minecraft</h3>
-          <p>RAM: 1.1 GB / 8 GB</p>
-          <p>Status: Online</p>
-          <button>Manage server</button>
-        </div>
-
-        <div class="card offline">
-          <h3>Palworld</h3>
-          <p>RAM: 0 GB / 8 GB</p>
-          <p>Status: Offline</p>
-          <button>Manage server</button>
-        </div>
+      <div class="server offline">
+        <h3>Palworld</h3>
+        <p>RAM: 0GB / 8GB</p>
+        <span>Offline</span>
       </div>
     </div>
-  </div>
+  </main>
 
-  <script src="script.js"></script>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
